@@ -1,0 +1,17 @@
+body {
+    background: #333;
+    color: #ddd;
+    margin: 3px;
+}
+a {
+    text-decoration: none;
+    color: #ddd;
+    border: 2px solid;
+    margin: 5px;
+    padding: 3px;
+}
+.prod_container{
+    border: 2px solid;
+    margin: 3px;
+    padding: 3px;
+}

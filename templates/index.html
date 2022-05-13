@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block head %}
+{% endblock %}
+
+
+{% block body %}
+<h1>Lista de productos</h1>
+
+{% for prod in products %}
+<div class="prod_container">
+  <h4>{{ prod.name }}</h4>
+  <p>{{prod.price}}</p>
+  <p>{{prod.quantity_in_stock}}</p>
+  <a href="/delete/{{prod.id}}">eliminar</a>
+  <form action="/update/{{prod.id}}" method="POST">
+    <input type="text" name="name" id="name" placeholder="nombre">
+    <input type="text" name="price" id="price" placeholder="precio">
+    <input type="text" name="quantity_in_stock" id="quantity_in_stock" placeholder="cantidad en stock">
+    <input type="submit" content="añadir producto">
+  </form>
+</div>
+{% endfor %}
+<form action="/" method="POST">
+  <input type="text" name="name" id="name" placeholder="nombre">
+  <input type="text" name="price" id="price" placeholder="precio">
+  <input type="text" name="quantity_in_stock" id="quantity_in_stock" placeholder="cantidad en stock">
+  <input type="submit" content="añadir producto">
+</form>
+{% endblock %}
